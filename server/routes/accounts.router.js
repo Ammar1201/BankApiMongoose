@@ -2,10 +2,10 @@ import { Router } from "express";
 
 export const accountsRouter = Router({ mergeParams: true });
 
-accountsRouter.get('', getUserAccounts);
+accountsRouter.get('');
 
-accountsRouter.post('/new-account', addAccount);
+accountsRouter.post('/new-account');
 
-accountsRouter.put('/deposit', depositToAccount);
-accountsRouter.put('/updateCredit', updateCredit);
-accountsRouter.put('/withdraw', withdrawFromAccount);
+accountsRouter.put('/deposit');
+accountsRouter.put('/updateCredit');
+accountsRouter.put('/withdraw');

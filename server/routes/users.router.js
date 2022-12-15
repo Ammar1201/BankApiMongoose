@@ -2,7 +2,7 @@ import { Router } from "express";
 
 export const userRouter = Router();
 
-userRouter.post('', addNewUser);
+userRouter.post('');
 
-userRouter.get('', getAllUsers);
-userRouter.get('/:userID', getUser);
+userRouter.get('');
+userRouter.get('/:userID');
