@@ -1,0 +1,27 @@
+{
+  "name": "bankapimongoose",
+  "version": "1.0.0",
+  "description": "## users: (/api/users)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ammar1201/BankApiMongoose.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ammar1201/BankApiMongoose/issues"
+  },
+  "homepage": "https://github.com/Ammar1201/BankApiMongoose#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.0",
+    "validator": "^13.7.0"
+  }
+}
