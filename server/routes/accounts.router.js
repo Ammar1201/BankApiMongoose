@@ -1,11 +1,13 @@
 import { Router } from "express";
+import { findUser } from "../middlewares/users.middleware.js";
+import { getUserAccounts, addAccount, depositToAccount, updateCredit, withdrawFromAccount } from "../controllers/accounts.controller.js";
 
 export const accountsRouter = Router({ mergeParams: true });
 
-accountsRouter.get('');
+accountsRouter.get('', findUser, getUserAccounts);
 
-accountsRouter.post('/new-account');
+accountsRouter.post('/new-account', addAccount);
 
-accountsRouter.put('/deposit');
-accountsRouter.put('/updateCredit');
-accountsRouter.put('/withdraw');
+accountsRouter.put('/deposit', findUser, depositToAccount);
+accountsRouter.put('/updateCredit', findUser, updateCredit);
+accountsRouter.put('/withdraw', findUser, withdrawFromAccount);

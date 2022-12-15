@@ -7,7 +7,7 @@
 #### GET → API-Link/api/users/:userID → get single user
 
 #### POST → API-Link/api/users → add new user
-    → in request body add "id"(*required*) and any other relevant information (optional).
+    → in request body add user's username and password.
 
 ## accounts: (/api/users/:userID/accounts)
 

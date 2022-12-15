@@ -1,8 +1,10 @@
 import { Router } from "express";
+import { findUser } from "../middlewares/users.middleware.js";
+import { addNewUser, getAllUsers, getUser } from "../controllers/users.controller.js";
 
 export const userRouter = Router();
 
-userRouter.post('');
+userRouter.post('', addNewUser);
 
-userRouter.get('');
-userRouter.get('/:userID');
+userRouter.get('', getAllUsers);
+userRouter.get('/:userID', findUser, getUser);

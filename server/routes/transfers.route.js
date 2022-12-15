@@ -1,8 +1,9 @@
 import { Router } from "express";
+import { transferMoney, getAllTransfers, getSingleTransfer } from "../controllers/transfers.controller.js";
 
 export const transfersRouter = Router();
 
-transfersRouter.post('/newTransfer');
+transfersRouter.post('/newTransfer', transferMoney);
 
-transfersRouter.get('');
-transfersRouter.get('/:transferID');
+transfersRouter.get('', getAllTransfers);
+transfersRouter.get('/:transferID', getSingleTransfer);
