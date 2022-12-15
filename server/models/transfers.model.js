@@ -10,7 +10,7 @@ const transferSchema = new mongoose.Schema({
     required: true
   },
   receiverUserID: {
-    type: Number,
+    type: String,
     required: true
   },
   receiverUserAccountNumber: {
@@ -27,4 +27,4 @@ const transferSchema = new mongoose.Schema({
   }
 });
 
-export const Transfer = mongoose.model('accounts', transferSchema);
+export const Transfer = mongoose.model('transfers', transferSchema);

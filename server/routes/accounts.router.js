@@ -6,7 +6,7 @@ export const accountsRouter = Router({ mergeParams: true });
 
 accountsRouter.get('', findUser, getUserAccounts);
 
-accountsRouter.post('/new-account', addAccount);
+accountsRouter.post('/new-account', findUser, addAccount);
 
 accountsRouter.put('/deposit', findUser, depositToAccount);
 accountsRouter.put('/updateCredit', findUser, updateCredit);
