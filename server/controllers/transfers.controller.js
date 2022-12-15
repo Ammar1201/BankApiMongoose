@@ -22,25 +22,11 @@ const validateAmountToTransfer = (amountToTransfer, res) => {
 	return false;
 };
 
-const validateAccounts = (senderUserAccount, receiverUserAccount, res) => {
-	if (!senderUserAccount) {
-		res.status(400).send({ message: 'senderUserAccount not Found!' });
-		return true;
-	}
-
-	if (!receiverUserAccount) {
-		res.status(400).send({ message: 'receiverUserAccount not Found!' });
-		return true;
-	}
-
-	return false;
-};
-
 //* -------------------------------------------get functions------------------------------------------------------
 export const getSingleTransfer = async (req, res) => {
 	const { transferID } = req.params;
 	try {
-		const transfer = await Transfer.find({ id: transferID });
+		const transfer = await Transfer.findById(transferID);
 		if (!transfer) {
 			res.status(404).send({ message: 'transfer not found!' });
 			return;
@@ -90,12 +76,12 @@ export const transferMoney = async (req, res) => {
 	const receiverUserAccount = await Account.findOne({ owner: receiverUserID, accountNumber: receiverUserAccountNumber });
 
 	if (!senderUserAccount) {
-		res.status(400).send({ message: 'senderUserAccount not Found!' });
+		res.status(400).send({ message: 'sender user account not Found!' });
 		return;
 	}
 
 	if (!receiverUserAccount) {
-		res.status(400).send({ message: 'receiverUserAccount not Found!' });
+		res.status(400).send({ message: 'receiver user account not Found!' });
 		return;
 	}
 
