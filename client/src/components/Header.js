@@ -10,10 +10,13 @@ const Header = () => {
             <NavLink className={(headerData) => headerData.isActive ? classes.active : ''} to='/'>Home</NavLink>
           </li>
           <li>
-            <NavLink className={(headerData) => headerData.isActive ? classes.active : ''} to='/shoes'>User</NavLink>
+            <NavLink className={(headerData) => headerData.isActive ? classes.active : ''} to='/users'>Users</NavLink>
           </li>
           <li>
-            <NavLink className={(headerData) => headerData.isActive ? classes.active : ''} to='/shoes/add'>Add User</NavLink>
+            <NavLink className={(headerData) => headerData.isActive ? classes.active : ''} to='/accounts'>Accounts</NavLink>
+          </li>
+          <li>
+            <NavLink className={(headerData) => headerData.isActive ? classes.active : ''} to='/transfers'>Transfers</NavLink>
           </li>
         </ul>
       </nav>

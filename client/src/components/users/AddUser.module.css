@@ -1,0 +1,23 @@
+.container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  border: 1px solid black;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  column-gap: 2rem;
+}
