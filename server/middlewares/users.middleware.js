@@ -3,7 +3,7 @@ import { checkReqBody } from "../utils.js";
 
 export const findUser = async (req, res, next) => {
   const reqBody = checkReqBody(req.body);
-  if (reqBody.status === 'bad request') {
+  if (req.method !== 'GET' && reqBody.status === 'bad request') {
     res.status(400).send(reqBody.error);
     return;
   }
