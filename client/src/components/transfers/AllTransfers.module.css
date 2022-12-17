@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.transfers {
+  text-align: center;
+}
+
+.transfers h1 {
+  margin-top: 20px;
+}

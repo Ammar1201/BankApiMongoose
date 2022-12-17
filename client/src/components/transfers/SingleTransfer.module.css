@@ -1,5 +1,4 @@
 .container {
-  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,20 +6,27 @@
 }
 
 .form {
-  border: 1px solid black;
-  width: 400px;
-  height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  column-gap: 2rem;
+  row-gap: 2rem;
 }
 
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  column-gap: 2rem;
+.form h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.form input {
+  padding: 1rem;
+  width: 100%;
+}
+
+.form button {
+  font-size: 2rem;
+  border: 1px solid black;
+  background-color: black;
+  color: #fff;
+  padding: 1rem 2rem;
 }
 
 .card {

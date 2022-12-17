@@ -22,7 +22,6 @@ const Accounts = () => {
         </li>
       </ul>
     </div>
-    // add new account - get user accounts - deposit - withdraw - update credit
   )
 }
 

@@ -16,6 +16,9 @@ import UserAccounts from "./components/accounts/UserAccounts";
 import Deposit from "./components/accounts/Deposit";
 import Withdraw from "./components/accounts/Withdraw";
 import UpdateCredit from "./components/accounts/UpdateCredit";
+import AllTransfers from "./components/transfers/AllTransfers";
+import SingleTransfer from "./components/transfers/SingleTransfer";
+import TransferMoney from "./components/transfers/TransferMoney";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -39,6 +42,9 @@ const App = () => {
         <Route path="/withdraw" element={<Withdraw />} />
         <Route path="/updatecredit" element={<UpdateCredit />} />
         <Route path="/transfers" element={<Transfers setIsLoading={setIsLoading} />} />
+        <Route path="/alltransfers" element={<AllTransfers />} />
+        <Route path="/singletransfer" element={<SingleTransfer />} />
+        <Route path="/transfer" element={<TransferMoney setMessage={setMessage} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

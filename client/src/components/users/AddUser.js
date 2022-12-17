@@ -1,8 +1,10 @@
-import React from 'react';
+import { useState } from 'react';
 import { addUserReq } from '../../api/Api';
 import classes from './AddUser.module.css';
 
 const AddUser = ({ setMessage }) => {
+  const [user, setUser] = useState(null);
+
   const addUser = async (event) => {
     event.preventDefault();
     const { name, password } = event.target.elements;
@@ -12,7 +14,7 @@ const AddUser = ({ setMessage }) => {
     }
     const addedUser = await addUserReq(userToAdd);
     if (addedUser) {
-      setMessage('user added successfully!');
+      setUser(addedUser);
     }
     else {
       setMessage('there was an error!');
@@ -34,6 +36,11 @@ const AddUser = ({ setMessage }) => {
           <input type="submit" value='add user' />
         </div>
       </form>
+      {user && <div className={classes.card} key={user._id}>
+        <h3>ID: {user._id}</h3>
+        <h3>Name: {user.username}</h3>
+        <h3>Accounts: {user.accounts.map(account => { return <span key={account}>{account}, </span> })}</h3>
+      </div>}
     </div>
   )
 }

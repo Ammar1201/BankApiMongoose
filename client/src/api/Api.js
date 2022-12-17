@@ -89,3 +89,33 @@ export const updateCreditReq = async (userID, updateCreditBody) => {
     console.log(error);
   }
 };
+
+export const getAllTransfersReq = async () => {
+  try {
+    const res = await Api.get(`/transfers`);
+    return res.data;
+  }
+  catch (error) {
+    console.log(error);
+  }
+};
+
+export const getSingleTransferReq = async (transferID) => {
+  try {
+    const res = await Api.get(`/transfers/${transferID}`);
+    return res.data;
+  }
+  catch (error) {
+    console.log(error);
+  }
+};
+
+export const transferMoneyReq = async (transferBody) => {
+  try {
+    const res = await Api.post(`/transfers/newTransfer`, transferBody);
+    return res.data;
+  }
+  catch (error) {
+    console.log(error);
+  }
+};

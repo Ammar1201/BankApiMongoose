@@ -5,7 +5,6 @@ import classes from './Users.module.css';
 const Users = () => {
   return (
     <div className={classes.container}>
-      {/* get user - get all users - add user */}
       <ul>
         <li>
           <Link to='/allusers'>get all users</Link>
