@@ -20,6 +20,7 @@ const Deposit = () => {
   return (
     <div>
       <div className={classes.container}>
+        <h1>Deposit Money To A User Account</h1>
         <form className={classes.form} onSubmit={depositMoneyHandler}>
           <div>
             <h3>Enter User ID:</h3>
@@ -35,7 +36,10 @@ const Deposit = () => {
           </div>
           <input type="submit" value='Deposit Money' />
         </form>
-        {account && <ShowAccount account={account} />}
+        {account && <div>
+          <h1>Deposit Processed Successfully!</h1>
+          <ShowAccount account={account} />
+        </div>}
       </div>
     </div >
   )

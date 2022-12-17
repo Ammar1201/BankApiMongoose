@@ -21,6 +21,7 @@ const SingleUser = () => {
 
   return (
     <div className={classes.container}>
+      <h1>Get A Specific User Information</h1>
       <div className={classes.form}>
         <div>
           <h3>Enter User ID:</h3>

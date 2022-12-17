@@ -20,6 +20,7 @@ const Withdraw = () => {
   return (
     <div>
       <div className={classes.container}>
+        <h1>Withdraw Money From A User Account</h1>
         <form className={classes.form} onSubmit={withdrawMoneyHandler}>
           <div>
             <h3>Enter User ID:</h3>
@@ -35,7 +36,10 @@ const Withdraw = () => {
           </div>
           <input type="submit" value='Withdraw Money' />
         </form>
-        {account && <ShowAccount account={account} />}
+        {account && <div>
+          <h1>Withdraw Processed Successfully!</h1>
+          <ShowAccount account={account} />
+        </div>}
       </div>
     </div >
   )

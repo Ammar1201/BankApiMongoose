@@ -23,6 +23,7 @@ const AddUser = ({ setMessage }) => {
 
   return (
     <div className={classes.container}>
+      <h1>Add A New User</h1>
       <form className={classes.form} onSubmit={addUser}>
         <div className={classes.formGroup}>
           <label>Name:</label>
@@ -33,13 +34,16 @@ const AddUser = ({ setMessage }) => {
           <input name='password' type="password" />
         </div>
         <div>
-          <input type="submit" value='add user' />
+          <input type="submit" value='Add User' />
         </div>
       </form>
-      {user && <div className={classes.card} key={user._id}>
-        <h3>ID: {user._id}</h3>
-        <h3>Name: {user.username}</h3>
-        <h3>Accounts: {user.accounts.map(account => { return <span key={account}>{account}, </span> })}</h3>
+      {user && <div className={classes.success}>
+        <h1>User Added Successfully!</h1>
+        <div className={classes.card} key={user._id}>
+          <h3>ID: {user._id}</h3>
+          <h3>Name: {user.username}</h3>
+          <h3>Accounts: {user.accounts.map(account => { return <span key={account}>{account}, </span> })}</h3>
+        </div>
       </div>}
     </div>
   )

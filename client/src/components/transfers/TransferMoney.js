@@ -27,7 +27,7 @@ const TransferMoney = ({ setMessage }) => {
 
   return (
     <div className={classes.container}>
-      <h1>Transfer Money</h1>
+      <h1>Transfer Money From One Account To Another</h1>
       <form className={classes.form} onSubmit={transferMoneyHandler}>
         <div className={classes.formGroup}>
           <label>Sender User ID:</label>
@@ -38,7 +38,7 @@ const TransferMoney = ({ setMessage }) => {
           <input name='senderUserAccountNumber' type="text" />
         </div>
         <div className={classes.formGroup}>
-          <label>Receive rUser ID:</label>
+          <label>Receiver User ID:</label>
           <input name='receiverUserID' type="text" />
         </div>
         <div className={classes.formGroup}>

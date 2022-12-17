@@ -16,8 +16,6 @@ const NewAccount = ({ setMessage }) => {
     const addedAccount = await addNewAccountReq(userID);
     if (addedAccount) {
       setAccount(addedAccount);
-      // setUserID('');
-      // setMessage('new account added successfully!');
     }
     else {
       setMessage('there was an error!');
@@ -31,15 +29,19 @@ const NewAccount = ({ setMessage }) => {
   return (
     <div>
       <div className={classes.container}>
+        <h1>Add A New Account To Existing User</h1>
         <div className={classes.form}>
           <div>
             <h3>Enter User ID:</h3>
             <input type="text" value={userID} onChange={userIDchange} />
           </div>
-          <button onClick={addAccountToUser}>Add Account To User</button>
+          <button onClick={addAccountToUser}>Add New Account</button>
         </div>
+        {account && <div>
+          <h1>Account Added Successfully!</h1>
+          <ShowAccount account={account} />
+        </div>}
       </div>
-      {account && <ShowAccount account={account} />}
     </div>
   )
 }

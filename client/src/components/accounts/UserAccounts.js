@@ -30,6 +30,7 @@ const UserAccounts = ({ setMessage }) => {
   return (
     <div>
       <div className={classes.container}>
+        <h1>Get All Accounts Of A Specific User</h1>
         <div className={classes.form}>
           <div>
             <h3>Enter User ID:</h3>
@@ -38,7 +39,10 @@ const UserAccounts = ({ setMessage }) => {
           <button onClick={addAccountToUser}>Show User Accounts</button>
         </div>
       </div>
-      {accounts && <ShowUserAccounts userID={userID} />}
+      {accounts && <div className={classes.success}>
+        <h1>All User Accounts Shown Below!</h1>
+        <ShowUserAccounts userID={userID} />
+      </div>}
     </div>
   )
 }

@@ -21,6 +21,7 @@ const UpdateCredit = () => {
   return (
     <div>
       <div className={classes.container}>
+        <h1>Update User Account Credit</h1>
         <form className={classes.form} onSubmit={updateCreditHandler}>
           <div>
             <h3>Enter User ID:</h3>
@@ -36,7 +37,10 @@ const UpdateCredit = () => {
           </div>
           <input type="submit" value='Update Credit' />
         </form>
-        {account && <ShowAccount account={account} />}
+        {account && <div>
+          <h1>Credit Updated Successfully!</h1>
+          <ShowAccount account={account} />
+        </div>}
       </div>
     </div >
   )

@@ -5,17 +5,18 @@ import classes from './Users.module.css';
 const Users = () => {
   return (
     <div className={classes.container}>
-      <ul>
-        <li>
-          <Link to='/allusers'>get all users</Link>
-        </li>
-        <li>
-          <Link to='/user'>get user</Link>
-        </li>
-        <li>
-          <Link to='/adduser'>add user</Link>
-        </li>
-      </ul>
+      <h1>All Operations For Users</h1>
+      <div>
+        <div>
+          <Link to='/allusers'>Show All Users Informations</Link>
+        </div>
+        <div>
+          <Link to='/user'>Show A Specific User Information</Link>
+        </div>
+        <div>
+          <Link to='/adduser'>Add New User</Link>
+        </div>
+      </div>
     </div>
   )
 }

@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.container h1 {
+  margin: 20px 0;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -30,7 +34,7 @@
 }
 
 .card {
-  width: 300px;
+  width: 350px;
   height: 150px;
   border: 1px solid black;
   text-align: center;

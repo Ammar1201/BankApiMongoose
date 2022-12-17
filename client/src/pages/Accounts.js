@@ -4,23 +4,24 @@ import classes from './Accounts.module.css';
 const Accounts = () => {
   return (
     <div className={classes.container}>
-      <ul>
-        <li>
-          <Link to='/newaccount'>add new account to user</Link>
-        </li>
-        <li>
-          <Link to='/useraccounts'>get user accounts</Link>
-        </li>
-        <li>
-          <Link to='/deposit'>deposit</Link>
-        </li>
-        <li>
-          <Link to='/withdraw'>withdraw</Link>
-        </li>
-        <li>
-          <Link to='/updatecredit'>update credit</Link>
-        </li>
-      </ul>
+      <h1>All Operations For Accounts</h1>
+      <div>
+        <div>
+          <Link to='/newaccount'>Add New Account To User</Link>
+        </div>
+        <div>
+          <Link to='/useraccounts'>Get All User's Accounts</Link>
+        </div>
+        <div>
+          <Link to='/deposit'>Deposit Money</Link>
+        </div>
+        <div>
+          <Link to='/withdraw'>Withdraw Money</Link>
+        </div>
+        <div>
+          <Link to='/updatecredit'>Update Credit</Link>
+        </div>
+      </div>
     </div>
   )
 }
