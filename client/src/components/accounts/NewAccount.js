@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { addNewAccountReq } from '../../api/Api';
-import ShowUserAccounts from '../utils/ShowUserAccounts';
+import ShowAccount from '../utils/ShowAccount';
 import classes from './NewAccount.module.css';
 
 const NewAccount = ({ setMessage }) => {
@@ -39,7 +39,7 @@ const NewAccount = ({ setMessage }) => {
           <button onClick={addAccountToUser}>Add Account To User</button>
         </div>
       </div>
-      {account && <ShowUserAccounts userID={userID} />}
+      {account && <ShowAccount account={account} />}
     </div>
   )
 }

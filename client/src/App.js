@@ -12,6 +12,10 @@ import SingleUser from "./components/users/SingleUser";
 import AddUser from "./components/users/AddUser";
 import Message from "./components/utils/Message";
 import NewAccount from "./components/accounts/NewAccount";
+import UserAccounts from "./components/accounts/UserAccounts";
+import Deposit from "./components/accounts/Deposit";
+import Withdraw from "./components/accounts/Withdraw";
+import UpdateCredit from "./components/accounts/UpdateCredit";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -30,10 +34,10 @@ const App = () => {
         <Route path="/adduser" element={<AddUser setMessage={setMessage} />} />
         <Route path="/accounts" element={<Accounts setIsLoading={setIsLoading} />} />
         <Route path="/newaccount" element={<NewAccount setMessage={setMessage} />} />
-        <Route path="/useraccounts" />
-        <Route path="/deposit" />
-        <Route path="/withdraw" />
-        <Route path="/updatecredit" />
+        <Route path="/useraccounts" element={<UserAccounts setMessage={setMessage} />} />
+        <Route path="/deposit" element={<Deposit />} />
+        <Route path="/withdraw" element={<Withdraw />} />
+        <Route path="/updatecredit" element={<UpdateCredit />} />
         <Route path="/transfers" element={<Transfers setIsLoading={setIsLoading} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

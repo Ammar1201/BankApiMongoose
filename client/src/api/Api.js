@@ -59,3 +59,33 @@ export const getUserAccountsReq = async (userID) => {
     console.log(error);
   }
 };
+
+export const depositMoneyReq = async (userID, depositBody) => {
+  try {
+    const res = await Api.patch(`/users/${userID}/accounts/deposit`, depositBody);
+    return res.data;
+  }
+  catch (error) {
+    console.log(error);
+  }
+};
+
+export const withdrawMoneyReq = async (userID, withdrawBody) => {
+  try {
+    const res = await Api.patch(`/users/${userID}/accounts/withdraw`, withdrawBody);
+    return res.data;
+  }
+  catch (error) {
+    console.log(error);
+  }
+};
+
+export const updateCreditReq = async (userID, updateCreditBody) => {
+  try {
+    const res = await Api.patch(`/users/${userID}/accounts/updateCredit`, updateCreditBody);
+    return res.data;
+  }
+  catch (error) {
+    console.log(error);
+  }
+};
