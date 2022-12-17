@@ -11,6 +11,7 @@ import AllUsers from "./components/users/AllUsers";
 import SingleUser from "./components/users/SingleUser";
 import AddUser from "./components/users/AddUser";
 import Message from "./components/utils/Message";
+import NewAccount from "./components/accounts/NewAccount";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -28,6 +29,11 @@ const App = () => {
         <Route path="/user" element={<SingleUser />} />
         <Route path="/adduser" element={<AddUser setMessage={setMessage} />} />
         <Route path="/accounts" element={<Accounts setIsLoading={setIsLoading} />} />
+        <Route path="/newaccount" element={<NewAccount setMessage={setMessage} />} />
+        <Route path="/useraccounts" />
+        <Route path="/deposit" />
+        <Route path="/withdraw" />
+        <Route path="/updatecredit" />
         <Route path="/transfers" element={<Transfers setIsLoading={setIsLoading} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

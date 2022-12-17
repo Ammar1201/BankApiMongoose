@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Api } from '../../api/Api';
-import UserAccounts from '../accounts/UserAccounts';
+import { getSingleUserReq } from '../../api/Api';
+import ShowUserAccounts from '../utils/ShowUserAccounts';
 import classes from './SingleUser.module.css';
 
 const SingleUser = () => {
@@ -8,9 +8,8 @@ const SingleUser = () => {
   const [user, setUser] = useState(null);
 
   const getUserInformation = () => {
-    Api.get(`/users/${userID}`)
-      .then(({ data }) => {
-        console.log(data);
+    getSingleUserReq(userID)
+      .then((data) => {
         setUser(data);
       })
       .catch((e) => console.log(e));
@@ -32,9 +31,9 @@ const SingleUser = () => {
       {user && <div className={classes.card} key={user._id}>
         <h3>ID: {user._id}</h3>
         <h3>Name: {user.username}</h3>
-        <h3>Accounts: {user.accounts.map(account => { return <span>{account}, </span> })}</h3>
+        <h3>Accounts: {user.accounts.map(account => { return <span key={account}>{account}, </span> })}</h3>
       </div>}
-      {user && <UserAccounts userID={userID} />}
+      {user && <ShowUserAccounts userID={userID} />}
     </div>
   )
 }

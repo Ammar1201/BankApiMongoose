@@ -1,5 +1,5 @@
 import React from 'react';
-import { addUserReq } from '../../requests';
+import { addUserReq } from '../../api/Api';
 import classes from './AddUser.module.css';
 
 const AddUser = ({ setMessage }) => {
@@ -18,6 +18,7 @@ const AddUser = ({ setMessage }) => {
       setMessage('there was an error!');
     }
   };
+
   return (
     <div className={classes.container}>
       <form className={classes.form} onSubmit={addUser}>

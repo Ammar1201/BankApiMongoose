@@ -1,29 +1,39 @@
-import { useState, useEffect } from 'react';
-import { Api } from '../../api/Api';
+import { useState } from 'react';
+import { getUserAccountsReq } from '../../requests';
 import classes from './UserAccounts.module.css';
 
-const UserAccounts = ({ userID }) => {
-  const [accounts, setAccounts] = useState(null);
+const UserAccounts = ({ setMessage }) => {
+  const [userID, setUserID] = useState('');
 
-  useEffect(() => {
-    Api.get(`/users/${userID}/accounts`)
-      .then(({ data }) => {
-        setAccounts(data);
-      })
-      .catch((e) => console.log(e));
-  }, [userID]);
+  const addAccountToUser = () => {
+    if (userID.trim().length < 22) {
+      setMessage('user id is invalid!');
+      return;
+    }
+
+    const addedAccount = getUserAccountsReq(userID);
+    if (addedAccount) {
+      setUserID('');
+      setMessage('new account added successfully!');
+    }
+    else {
+      setMessage('there was an error!');
+    }
+  };
+
+  const userIDchange = ({ target }) => {
+    setUserID(target.value);
+  };
 
   return (
     <div className={classes.container}>
-      {accounts && accounts.map(account => {
-        return (
-          <div className={classes.card} key={account._id}>
-            <h3>Account Number: {account.accountNumber}</h3>
-            <h3>Cash: {account.cash}</h3>
-            <h3>Credit: {account.credit}</h3>
-          </div>
-        )
-      })}
+      <div className={classes.form}>
+        <div>
+          <h3>Enter User ID:</h3>
+          <input type="text" value={userID} onChange={userIDchange} />
+        </div>
+        <button onClick={addAccountToUser}>Show User Accounts</button>
+      </div>
     </div>
   )
 }
